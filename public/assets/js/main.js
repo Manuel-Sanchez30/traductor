@@ -1,6 +1,6 @@
 
 
-dotenv.config();
+//dotenv.config();
 let translateButon = document.querySelector("#translateButton");
 
 
