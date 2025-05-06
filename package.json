@@ -1,0 +1,20 @@
+{
+  "name": "traductoria",
+  "version": "1.0.0",
+  "description": "traductor con IA ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Manuel Sanchez",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "openai": "^4.97.0"
+  }
+}
