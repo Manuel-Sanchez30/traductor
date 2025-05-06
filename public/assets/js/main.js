@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+
 
 dotenv.config();
 let translateButon = document.querySelector("#translateButton");
@@ -27,11 +27,11 @@ translateButon.addEventListener("click", async () => {
     containerMessages.scrollTop = containerMessages.scrollHeight;
 
     //peticion al backend
-    const backendUrl = process.env.APP_BACKEND_URL || 'http://localhost:3000'
+    //const backendUrl = process.env.APP_BACKEND_URL || 'http://localhost:3000'
     try {
 
         
-        const response = await fetch(`${backendUrl}/api/traducir`, {
+        const response = await fetch('https://traductor-q2ca.onrender.com/api/traducir', {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
