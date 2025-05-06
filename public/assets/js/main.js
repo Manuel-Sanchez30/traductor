@@ -1,4 +1,8 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
 let translateButon = document.querySelector("#translateButton");
+
 
 translateButon.addEventListener("click", async () => {
 
