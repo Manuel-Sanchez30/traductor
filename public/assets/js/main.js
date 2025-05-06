@@ -24,8 +24,10 @@ translateButon.addEventListener("click", async () => {
 
     //peticion al backend
     try {
+
+        const backendUrl = process.env.APP_BACKEND_URL || 'http://localhost:3000'
         
-        const response = await fetch("/api/traducir", {
+        const response = await fetch(`${backendUrl}/api/traducir`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
