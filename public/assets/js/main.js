@@ -23,9 +23,9 @@ translateButon.addEventListener("click", async () => {
     containerMessages.scrollTop = containerMessages.scrollHeight;
 
     //peticion al backend
+    const backendUrl = process.env.APP_BACKEND_URL || 'http://localhost:3000'
     try {
 
-        const backendUrl = process.env.APP_BACKEND_URL || 'http://localhost:3000'
         
         const response = await fetch(`${backendUrl}/api/traducir`, {
             method: "POST",
