@@ -3,6 +3,16 @@ import express from 'express';
 import dotenv from 'dotenv';
 import OpenAI from 'openai';
 
+const allowedOrigin = 'https://statuesque-alfajores-c0d793.netlify.app/';
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true'); // Si necesitas manejar cookies o autenticación
+    next();
+});
+
 //cargar configuracion
 dotenv.config();
 
