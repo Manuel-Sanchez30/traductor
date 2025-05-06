@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import OpenAI from 'openai';
 
 const allowedOrigin = 'https://statuesque-alfajores-c0d793.netlify.app/';
+const app = express();
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
@@ -17,7 +18,6 @@ app.use((req, res, next) => {
 dotenv.config();
 
 //cargar express
-const app = express();
 const PORT = process.env.PORT || 3000;
 
 //servir Frontend
