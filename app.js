@@ -2,22 +2,18 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import OpenAI from 'openai';
+import cors from 'cors';
 
-const allowedOrigin = 'https://statuesque-alfajores-c0d793.netlify.app/';
-const app = express();
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Credentials', 'true'); // Si necesitas manejar cookies o autenticación
-    next();
-});
+
+
+
 
 //cargar configuracion
 dotenv.config();
 
 //cargar express
+const app = express();
 const PORT = process.env.PORT || 3000;
 
 //servir Frontend
@@ -25,6 +21,12 @@ app.use("/", express.static("public"));
 
 //middelware para procesar json
 app.use(express.json());
+
+// Configurar CORS para permitir peticiones desde tu frontend
+app.use(cors({
+    origin: 'https://traduciendo-para-maye.netlify.app/'  // Cambia esto por tu dominio exacto de Netlify
+}));
+
 
 //instancia de openai y pasar el apikey
 const openai = new OpenAI({
