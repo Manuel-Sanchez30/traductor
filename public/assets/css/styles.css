@@ -12,6 +12,7 @@ body{
     height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .header__icon{
@@ -140,4 +141,62 @@ body{
 
 .chat__button:hover{
     background-color: #0a5bb2;
+}
+
+
+/* Teléfonos (pantallas menores a 600px) */
+@media (max-width: 600px) {
+    .chat {
+        width: 90vw;
+        padding: 1rem;
+    }
+
+    .chat__messages {
+        height: 20rem;
+        padding: 0.5rem;
+    }
+
+    .chat__message {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+
+    .header__tittle {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .header__icon {
+        height: 3rem;
+    }
+
+    .chat__select,
+    .chat__button {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+
+    .chat__inputs {
+        flex-direction: column;
+    }
+}
+
+/* Tablets (600px a 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .chat {
+        width: 70vw;
+    }
+
+    .chat__message {
+        font-size: 1.6rem;
+    }
+
+    .header__tittle {
+        font-size: 2.5rem;
+    }
+
+    .chat__select,
+    .chat__button {
+        font-size: 1.3rem;
+    }
 }
