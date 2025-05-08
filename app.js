@@ -4,11 +4,6 @@ import dotenv from 'dotenv';
 import OpenAI from 'openai';
 import cors from 'cors';
 
-
-
-
-
-
 //cargar configuracion
 dotenv.config();
 
@@ -24,7 +19,7 @@ app.use(express.json());
 
 // Configurar CORS para permitir peticiones desde tu frontend
 app.use(cors({
-    origin: 'https://traduciendo-para-maye.netlify.app/'  // Cambia esto por tu dominio exacto de Netlify
+    origin: 'https://traduciendo-para-maye.netlify.app'  // Cambia esto por tu dominio exacto de Netlify
 }));
 
 
